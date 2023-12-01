@@ -1,0 +1,93 @@
+package u3entregable;
+
+
+public class Ejercicio1 {
+
+	//Antonio Jiménez Ruiz DAW-1 Programación mañana
+	
+	public static void main(String[] args) {
+		try {
+			
+		
+		int numBolas = 99999;
+		int numPremios = 1807;
+		
+		
+		System.out.println("-----LOTERÍAS Y APUESTAS DEL ESTADO-----");
+		System.out.println("Sorteo de Navidad");
+		System.out.println("Listado oficial de premios");
+		
+		creaBomboNumeros(numBolas);
+		creaBomboPremios(numPremios);
+		
+	}catch(Exception e){
+		System.out.println("Estoy en este catch");}
+	}
+	
+	public static int[] creaBomboNumeros(int numBolas) { //función que creará un bombo con combinaciones de números posibles
+		
+		int bombo[] = new int[numBolas];
+		
+		for(int i = 0 ; i < bombo.length ; i++) {
+				bombo[i] = (int)(Math.random()* bombo.length); //asignaremos una combinacion de numero por cada posición de la array bombo
+				System.out.println("Número: " + String.valueOf(bombo[i]));
+					}
+				
+		return(bombo); //devolverá el bombo de las combinaciones de números posibles entre los límites
+		}
+	
+	public static String[] creaBomboPremios(int numPremios) {
+		
+		String premio[] = new String[numPremios];
+		for(int i = 0; i < numPremios ; i++) {
+			if(i == 0) { //asignamos el tipo de premio a cada posible premio del sorteo
+				premio[i] = "primero";
+				System.out.println("premiado con: "+ premio[i]);
+			}
+			else if(i == 1) {
+				premio[i] = "segundo";
+				System.out.println("premiado con: "+ premio[i]);
+			}
+			else if(i == 2) {
+				premio[i] = "tercero";
+				System.out.println("premiado con: "+ premio[i]);
+			}
+			else if(i == 3 || i == 4) {
+				premio[i] = "cuarto";
+				System.out.println("premiado con: "+ premio[i]);
+			}
+			else if(i == 5 || i == 6 || i == 6 || i == 7 || i == 8 || i == 9 || i == 10 || i == 11) {
+				premio[i] = "cuarto";
+				System.out.println("premiado con: "+ premio[i]);
+			}
+			
+			else {
+				premio[i] = "pedrea";
+				System.out.println("premiado con: "+ premio[i]);
+			}
+		}
+		return(premio); //devolverá el tipo de premio que puede ser asignadoi
+		
+	}
+	
+	public static int dameNumero(int[] bombo) {
+		
+		int numeroAgraciado = (int)(Math.random()* bombo.length); //seleccionaremos un número aleatorio de la lista del bombo para ser premiado
+		return (numeroAgraciado); //devolverá como valor el número que ha sido seleccionado para ser premiado
+}
+	
+public static String damePremio (String[] bombo) {
+		String premioConcedido = null;	
+		//concederá el premio a la posición del bombo
+		String premioResultante[] = new String[bombo.length];
+		
+		premioResultante[(int) Math.random()*bombo.length] = premioConcedido;
+		System.out.println("premiado con:" + premioConcedido );
+		
+		return(premioConcedido);
+		
+	}
+
+	
+}
+
